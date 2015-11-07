@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Web Workers</title>
+	</head>
+	<body>
+		<div>
+			<p>The time is now:<span id="result"/></p>
+		</div>
+		<script>
+			var worker = new Worker('worker.js');
+			worker.onmessage = function(e){
+				document.getElementById('result').innerHTML = e.data;
+			};
+		</script>
+	</body>
+</html>

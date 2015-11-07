@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Websocket Html</title>
+	</head>
+	<body>
+		<div>
+			<p>Websocket</p>
+		</div>
+		<script>
+			var socket = new WebSocket("ws://websockets.org:8787");
+			socket.onopen = function(e) {console.log("Socket opened");};
+			socket.onclose = function(e) {console.log("Socket closed");};
+			socket.onmessage = function(e) {console.log(e.data);};
+			socket.onerror = function(e) {console.log("Error:" + e.data);};
+			
+			socket.send("Hello World!");
+		</script>
+	</body>
+</html>
